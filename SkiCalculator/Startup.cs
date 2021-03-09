@@ -21,7 +21,8 @@ namespace SkiCalculator
             services.AddCors(options =>
             {
                 options.AddPolicy("AllowAllOrigins",
-                    builder => builder.AllowAnyOrigin()
+                    builder => builder
+                    .AllowAnyOrigin()
                     .AllowAnyMethod()
                     .AllowAnyHeader()
                     );
@@ -34,7 +35,7 @@ namespace SkiCalculator
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
-            app.UseCors();
+            app.UseCors("AllowAllOrigins");
             app.UseSwagger();
             if (env.IsDevelopment())
             {

@@ -8,34 +8,34 @@ namespace SkiCalculator.CalculatorPage
     [Route("api/CalculatorPage")]
     public class CalculatorPageController : Controller
     {
-        [HttpGet("GetSkiLenght/{length}/{age}/{style}")]
-        public List<int> Get(int length, int age, string style)
+        [HttpGet("GetSkiLenght/{height}/{age}/{style}")]
+        public List<int> Get(int height, int age, string style)
         {
             List<int> resultSpan = new List<int>();
             int fromSpan;
             int toSpan;
-            if (age < 0 || length < 0)
-                throw new ArgumentException("Age and length must be greater than 0");
+            if (age < 0 || height < 0)
+                throw new ArgumentException("Age and height must be greater than 0");
             if (age < 5)
             {
-                fromSpan = length;
-                toSpan = length;
+                fromSpan = height;
+                toSpan = height;
             }
             else if (age < 9)
             {
-                fromSpan = length+10;
-                toSpan = length+20;
+                fromSpan = height+10;
+                toSpan = height+20;
             }
             else if (style.ToLower() == "classic")
             {
-                fromSpan = length + 20;
-                toSpan = length + 20;
+                fromSpan = height + 20;
+                toSpan = height + 20;
                 
             }
             else if (style.ToLower() == "skate")
             {
-                fromSpan = length + 10;
-                toSpan = length + 15;
+                fromSpan = height + 10;
+                toSpan = height + 15;
 
             }
             else
