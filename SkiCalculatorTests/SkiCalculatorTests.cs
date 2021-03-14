@@ -30,8 +30,8 @@ namespace SkiCalculatorTests
         {
             Person person = new Person(150, 3, "classic");
             Ski recommendedSkis = new Ski(person);
-            Assert.Equal(150, recommendedSkis.lengthSpan(0));
-            Assert.Equal(150, recommendedSkis.toLength);
+            Assert.Equal(150, recommendedSkis.lengthSpan[0]);
+            Assert.Equal(150, recommendedSkis.lengthSpan[1]);
         }
     }
 }
