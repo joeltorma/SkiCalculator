@@ -8,7 +8,7 @@ import { DataService } from '../data.service';
 })
 export class SkiLengthCalculatorComponent implements OnInit {
   public lengthSpan: LengthSpan | undefined;
-
+  selectedStyle = '';
   constructor(private dataService: DataService) { }
   public height: string = '170';
   public age: string = '30';
