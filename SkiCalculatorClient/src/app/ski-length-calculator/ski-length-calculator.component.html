@@ -1,4 +1,4 @@
-<mat-card style="margin-top:10px;">
+<!-- <mat-card style="margin-top:10px;">
     <mat-card-header>
         <mat-card-title>Calculator</mat-card-title>
         <mat-card-subtitle>Optimal skis for your age, height and ski style
@@ -21,7 +21,7 @@
     <mat-card-content>
         <mat-form-field appearance="fill">
         <mat-label>Select style</mat-label>
-        <mat-select [(value)]="selectedStyle">
+        <mat-select [(value)]="selectedStyle" formControlName="style">
             <mat-option>None</mat-option>
             <mat-option value="classic">Classic</mat-option>
             <mat-option value="skate">Skate</mat-option>
@@ -31,4 +31,42 @@
         <p>Have fun with your new {{selectedStyle}} skis!</p>
         </div>
     </mat-card-content>
+</mat-card> -->
+
+<mat-card style="margin-top:10px;">
+    <mat-card-header>
+        <mat-card-title>Calculator</mat-card-title>
+        <mat-card-subtitle>Optimal skis for your age, height and ski style
+        </mat-card-subtitle>
+    </mat-card-header>
+        <form [formGroup]="calculateForm" (submit)="submitCalculation()">
+        <mat-form-field class="form-field" appearance="outline">
+            <mat-label> Height
+            </mat-label>
+            <input matInput formControlName="height" required>
+            <mat-error *ngIf="calculateForm.controls.height.touched && calculateForm.controls.height.invalid">
+            <span *ngIf="calculateForm?.controls?.height?.errors?.required">This field is mandatory.</span>
+            <span *ngIf="calculateForm?.controls?.height?.errors?.pattern">This field is invalid.</span>
+            </mat-error>
+        </mat-form-field>
+        <mat-form-field class="form-field" appearance="outline">
+            <mat-label> Age
+            </mat-label>
+            <input matInput formControlName="age" required>
+            <mat-error *ngIf="calculateForm.controls.age.touched && calculateForm.controls.age.invalid">
+                <span *ngIf="calculateForm?.controls?.age?.errors?.required">This field is mandatory.</span>
+                <span *ngIf="calculateForm?.controls?.age?.errors?.pattern">This field is invalid.</span>
+            </mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>Select style</mat-label>
+            <mat-select [(value)]="selectedStyle" formControlName="style">
+                <mat-option [value]="styleArray" *ngFor="let styleArray of StyleArray">{{styleArray}}</mat-option>
+            </mat-select>
+        </mat-form-field>
+        <button mat-raised-button color="primary" type="submit">Calculate</button>
+        </form>
+        <div *ngIf="selectedStyle">
+            <p>Have fun with your new {{selectedStyle}} skis!</p>
+        </div>
 </mat-card>
