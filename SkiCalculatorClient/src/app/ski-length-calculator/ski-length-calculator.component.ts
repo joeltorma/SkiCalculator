@@ -9,7 +9,8 @@ import { DataService } from '../data.service';
   styleUrls: ['./ski-length-calculator.component.css']
 })
 export class SkiLengthCalculatorComponent implements OnInit {
-  public lengthSpan: LengthSpan | undefined;
+  fromLength: number | undefined;
+  toLength: number | undefined;
   style = '';
   selectedStyle = '';
   height: number = 0;
@@ -33,15 +34,13 @@ export class SkiLengthCalculatorComponent implements OnInit {
       return;
     }
     console.log(this.calculateForm.value)
+    this.height = this.calculateForm.controls['height'].value;
+    this.age = this.calculateForm.controls['age'].value;
+    this.style = this.calculateForm.controls['style'].value;
     this.dataService.sendGetRequest(this.height, this.age, this.style).subscribe((data: any) => {
         console.log(data);
-        this.lengthSpan = data;
+        this.fromLength = data[0];
+        this.toLength = data[1];
     })
   }
-
-}
-
-interface LengthSpan {
-  fromLength: number;
-  toLength: number;
 }
