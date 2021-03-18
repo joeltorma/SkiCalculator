@@ -1,8 +1,8 @@
-.calculator-container {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .calculator-container > * {
-    width: 100%;
-  }
+form {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+}
