@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.809.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SkiCalculator", "SkiCalculator\SkiCalculator.csproj", "{F5379558-D94B-4511-9653-DDB2D1AD33C6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SkiCalculator", "SkiCalculator\SkiCalculator.csproj", "{F5379558-D94B-4511-9653-DDB2D1AD33C6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SkiCalculatorTests", "SkiCalculatorTests\SkiCalculatorTests.csproj", "{2E31B807-AE5B-47CC-A542-764C455E35AD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SkiCalculatorTests", "SkiCalculatorTests\SkiCalculatorTests.csproj", "{2E31B807-AE5B-47CC-A542-764C455E35AD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
