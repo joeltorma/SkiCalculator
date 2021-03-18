@@ -10,7 +10,7 @@ export class DataService {
 
   constructor(private httpClient: HttpClient) { }
 
-  public sendGetRequest(height: number, age: number, style:string) {
+  sendGetRequest(height: number, age: number, style:string) {
     return this.httpClient.get(this.REST_API_SERVER_GET_SKI_LENGTH+height+'/'+age+'/'+style);
   }
 }

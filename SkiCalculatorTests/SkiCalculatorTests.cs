@@ -33,5 +33,23 @@ namespace SkiCalculatorTests
             Assert.Equal(150, recommendedSkis.lengthSpan[0]);
             Assert.Equal(150, recommendedSkis.lengthSpan[1]);
         }
+
+        [Fact]
+        public void L150_A3_Skate()
+        {
+            Person person = new Person(150, 3, "skate");
+            Ski recommendedSkis = new Ski(person);
+            Assert.Equal(150, recommendedSkis.lengthSpan[0]);
+            Assert.Equal(150, recommendedSkis.lengthSpan[1]);
+        }
+
+        //[Fact]
+        //public void L150_A3_Skate()
+        //{
+        //    Person person = new Person(150, 3, "skate");
+        //    Ski recommendedSkis = new Ski(person);
+        //    Assert.Equal(150, recommendedSkis.lengthSpan[0]);
+        //    Assert.Equal(150, recommendedSkis.lengthSpan[1]);
+        //}
     }
 }
