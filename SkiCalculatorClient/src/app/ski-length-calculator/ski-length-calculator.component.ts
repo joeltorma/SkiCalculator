@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { throwError } from 'rxjs';
 import { __classPrivateFieldSet } from 'tslib';
 import { DataService } from '../data.service';
 
